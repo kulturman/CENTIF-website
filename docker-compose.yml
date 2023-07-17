@@ -29,6 +29,17 @@ services:
     ports:
       - 8899:80
 
+  backend:
+    container_name: centif-backend
+    build:
+      context: .
+    depends_on:
+      - strapiDB
+    ports:
+      - "1337:1337"
+    networks:
+      - strapi
+
 volumes:
   strapi-data:
 
