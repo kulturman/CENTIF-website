@@ -35,6 +35,9 @@ services:
       context: .
     depends_on:
       - strapiDB
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
     ports:
       - "1337:1337"
     networks:
