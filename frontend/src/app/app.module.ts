@@ -3,10 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MainMenuComponent } from './components/main-menu/main-menu.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
+import { CarousselComponent } from './components/caroussel/caroussel.component';
+import { DropdownMenuItemComponent } from './components/dropdown-menu-item/dropdown-menu-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    MainMenuComponent,
+    HomePageComponent,
+    FooterComponent,
+    MobileMenuComponent,
+    CarousselComponent,
+    DropdownMenuItemComponent
   ],
   imports: [
     BrowserModule,
