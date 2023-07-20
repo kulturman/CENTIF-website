@@ -1,3 +1,21 @@
 .logo {
   width: 150px !important;
 }
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 30px;
+}
+
+.header-top-logo-text {
+  display: flex;
+  align-items: center;
+}
+
+.header-to-logo-text__text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.mayor-welcome-text {}
