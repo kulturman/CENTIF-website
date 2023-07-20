@@ -3,8 +3,52 @@
 .mayor-welcome-text {
   line-height: 2;
   color: rgb(25,134,63);
+  text-align: center;
+  padding: 20px;
+  font-size: 1.8rem;
 }
 
 .Mayor-video-msg {
   background: #E3CF4D;
+}
+
+.title-style-3 {
+  text-align: center;
+}
+
+.depart-info {
+  background: #91C5A7;
+}
+
+.news {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.news__item {
+  width: calc(25% - 10px);
+}
+
+.city-news {
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.usefulLink-img {
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) and (min-width: 576px){
+  .news__item {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 576px){
+  .news__item {
+    width: 100%;
+  }
 }
