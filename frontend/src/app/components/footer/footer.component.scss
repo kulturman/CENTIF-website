@@ -1,0 +1,40 @@
+.footer-box {
+  display: flex;
+  gap: 60px;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.footer-title {
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.twitter-widget {
+  width: 200px;
+}
+
+.footer-box__part1 {
+  display: flex;
+  gap: 50px;
+  align-items: baseline;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .footer-box {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer-box__part1 {
+  }
+
+
+  .twitter-widget {
+    width: 100%;
+  }
+}

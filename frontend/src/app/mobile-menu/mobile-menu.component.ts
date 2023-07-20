@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {MenuItem} from "../components/main-menu/main-menu.component";
 
 @Component({
   selector: 'app-mobile-menu',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./mobile-menu.component.scss']
 })
 export class MobileMenuComponent {
+  @Input() menu!: MenuItem[];
+  selectedMenu: number | null = null;
+  @Input() show: boolean = false;
+
+  selectMenu(index: number | null) {
+    this.selectedMenu = index;
+  }
 
 }

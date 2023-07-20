@@ -1,3 +1,18 @@
 .dropdown-menu.active {
   display: block !important;
 }
+
+.backdrop {
+  width: 100vh;
+  height: 100vh;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5);
+  display: none;
+}
+
+.backdrop.visible {
+  display: block;
+}

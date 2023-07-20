@@ -8,9 +8,14 @@ import {Component, Input} from '@angular/core';
 export class MainMenuComponent {
   @Input() menu!: MenuItem[];
   selectedMenu: number | null = null;
+  showMobileMenu: boolean = false;
 
   selectMenu(index: number | null) {
     this.selectedMenu = index;
+  }
+
+  toggleMobileMenu() {
+    this.showMobileMenu = !this.showMobileMenu;
   }
 }
 

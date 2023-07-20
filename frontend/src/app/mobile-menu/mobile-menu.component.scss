@@ -1,0 +1,25 @@
+.sidebar {
+  background: red;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  background: #91C5A7;
+  width: 300px;
+  left: -500px;
+  height: 100vh;
+  z-index: 200;
+  padding-left: 20px;
+  animation: 3s ease-in 1s 2 reverse both paused slidein;
+  transition-property: left;
+  transition-duration: 500ms;
+}
+
+.mobile-menu.visible {
+  left: 0;
+}
+
+.dropdown-menu.active {
+  display: block;
+}

@@ -28,7 +28,7 @@ export class HomePageComponent {
       text: 'DECLARATION EN LIGNE'
     },
     {
-      img: 'assets/images/logo.jpeg',
+      img: 'assets/images/usefulLinks/supervision.jpeg',
       link: '',
       text: 'AUTORITE DE SUPERVISION ET DE CONTROLE'
     },

@@ -9,7 +9,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { CarousselComponent } from './components/caroussel/caroussel.component';
-import { DropdownMenuItemComponent } from './components/dropdown-menu-item/dropdown-menu-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +19,6 @@ import { DropdownMenuItemComponent } from './components/dropdown-menu-item/dropd
     FooterComponent,
     MobileMenuComponent,
     CarousselComponent,
-    DropdownMenuItemComponent
   ],
   imports: [
     BrowserModule,
