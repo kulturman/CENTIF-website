@@ -2,10 +2,7 @@
 <div class="main-content">
   <section class="Mayor-video-msg">
     <p class="mayor-welcome-text">
-      La Cellule Nationale de traitement des Informations Financières (CENTIF)
-      est la cellule de renseignements financiers (CRF) chargée de lutter contre
-      le blanchiment de capitaux et le financement du terrorisme
-      pour un système financier sûr.
+      {{homeText?.data?.attributes?.homeText}}
     </p>
   </section>
   <section class="wf100 city-news p75">
@@ -14,17 +11,25 @@
         <h3>Nos Dernières Nouvelles</h3>
       </div>
       <div class="news">
-        <div class="news__item" *ngFor="let i of [1,2,3,4]">
+        <div class="news__item" *ngFor="let article of articles?.data">
           <div class="news-box">
             <div class="new-thumb">
-              <img src="assets/images/h3citynews-1.jpg" alt="">
+              <img
+                src="http://localhost:1337{{article.attributes.coverImage.data.attributes.formats.small.url}}"
+              alt="Illustration">
             </div>
             <div class="new-txt">
               <ul class="news-meta">
-                <li>20 MAR, 2019</li>
+                <li>{{article.attributes.publishedAt | date: 'dd/MM/yyyy'}}</li>
               </ul>
-              <h6><a href="#">Media talking about foriegn affairs</a></h6>
-              <p> How all this mistaken idea of denounce pleasure and praising pain was born I will give you an. </p>
+              <h6>
+                <a routerLink="/articles/{{article.attributes.id}}">
+                  {{article.attributes.title}}
+                </a>
+              </h6>
+              <p>
+                {{article.attributes.content | slice:0:100}}
+              </p>
             </div>
           </div>
         </div>

@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Articles, HomePageService, HomeText} from "./home-page.service";
+import {forkJoin} from "rxjs";
+import {formatDate} from "@angular/common";
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit {
   usefulLinks = [
     {
       img: 'assets/images/usefulLinks/gafi.jpeg',
@@ -38,4 +41,22 @@ export class HomePageComponent {
       text: 'LISTES SFC DES NATIONS UNIES'
     },
   ]
+  articles!: Articles;
+
+  homeText!: HomeText;
+  constructor(private homeService: HomePageService) {
+  }
+
+  ngOnInit(): void {
+    forkJoin([
+      this.homeService.getHomeData(),
+      this.homeService.getLastArticles(),
+    ]).subscribe(([homeData, articles]) => {
+      this.homeText = homeData;
+      this.articles = articles;
+      console.log(articles)
+    })
+  }
+
+  protected readonly formatDate = formatDate;
 }
