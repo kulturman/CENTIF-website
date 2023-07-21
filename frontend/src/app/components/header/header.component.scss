@@ -23,3 +23,9 @@
 }
 
 .mayor-welcome-text {}
+
+@media (max-width: 400px) {
+  .header-to-logo-text__text {
+    display: none;
+  }
+}

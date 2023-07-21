@@ -2449,7 +2449,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 .main-footer {
 	background: url(../images/footerbg.jpg) no-repeat;
 	background-size: cover;
-	padding: 60px 0;
+	padding: 40px 0;
 }
 .home3.main-footer {
 	/*background: url(../images/h3footerbg.jpg) no-repeat;*/
@@ -2517,7 +2517,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	position: relative;
 }
 .tw-txt {
-	padding: 30px 30px 17px 30px;
+	padding: 60px 0px 17px 20px;
 }
 .twitter-widget h6 {
 	color: #fff;
