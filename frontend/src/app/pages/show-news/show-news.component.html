@@ -22,7 +22,7 @@
             </div>
             <div class="new-txt">
               <ul class="news-meta">
-                <li>{{article?.data?.attributes?.publishedAt | date: 'dd/MM/yyyy'}}</li>
+                <li>{{article?.data?.attributes?.publishedAt | date: 'mediumDate': 'UCT': 'fr-FR'}}</li>
               </ul>
               <div class="news-content" [innerHTML]="article?.data?.attributes?.content"></div>
             </div>
@@ -34,9 +34,13 @@
               <h4>Derniers articles</h4>
               <div class="recent-posts inner">
                 <ul>
-                  <li>
-                    <img src="images/rp1.jpg" alt=""> <strong>28 August, 2019</strong>
-                    <h6> <a href="#">Fake News may be worrisome, but the </a> </h6>
+                  <li *ngFor="let article of articles?.data">
+                    <img src="{{environment.baseUrl + article.attributes.coverImage.data.attributes.formats.small.url}}" alt=""> <strong>{{ article.attributes.publishedAt | date: 'mediumDate': 'UCT': 'fr-FR' }}</strong>
+                    <h6>
+                      <a routerLink="/articles/{{article.id}}">
+                        {{article.attributes.title}}
+                      </a>
+                    </h6>
                   </li>
                 </ul>
               </div>

@@ -20,7 +20,7 @@
             </div>
             <div class="new-txt">
               <ul class="news-meta">
-                <li>{{article.attributes.publishedAt | date: 'dd/MM/yyyy'}}</li>
+                <li>{{article.attributes.publishedAt | date: 'mediumDate': 'UCT': 'fr-FR'}}</li>
               </ul>
               <h6>
                 <a routerLink="/articles/{{article.id}}">

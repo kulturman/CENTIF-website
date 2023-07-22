@@ -11,7 +11,10 @@ import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.compon
 import { CarousselComponent } from './components/caroussel/caroussel.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ShowNewsComponent } from './pages/show-news/show-news.component';
+import {registerLocaleData} from "@angular/common";
+import localeFr from '@angular/common/locales/fr';
 
+registerLocaleData(localeFr, 'fr');
 @NgModule({
   declarations: [
     AppComponent,

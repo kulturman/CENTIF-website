@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {forkJoin} from "rxjs";
+import {Articles} from "../home-page/home-page.service";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,10 @@ export class ShowArticleService {
   constructor(private httpClient: HttpClient) { }
 
   getSingleArticle(id: number) {
-    return this.httpClient.get<Article>(`/api/articles/${id}?populate=*`);
+    return forkJoin([
+      this.httpClient.get<Article>(`/api/articles/${id}?populate=*`),
+      this.httpClient.get<Articles>(`/api/articles?pagination[limit]=5&sort[0]=createdAt:desc&populate=coverImage`)
+    ]);
   }
 }
 
