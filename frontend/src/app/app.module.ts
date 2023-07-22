@@ -13,6 +13,10 @@ import {HttpClientModule} from "@angular/common/http";
 import { ShowNewsComponent } from './pages/show-news/show-news.component';
 import {registerLocaleData} from "@angular/common";
 import localeFr from '@angular/common/locales/fr';
+import {SubHeaderComponent} from "./components/sub-header/sub-header.component";
+import { NewsPageComponent } from './pages/news-page/news-page.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { BackdropComponent } from './components/backdrop/backdrop.component';
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -25,6 +29,11 @@ registerLocaleData(localeFr, 'fr');
     MobileMenuComponent,
     CarousselComponent,
     ShowNewsComponent,
+    SubHeaderComponent,
+    SubHeaderComponent,
+    NewsPageComponent,
+    SpinnerComponent,
+    BackdropComponent,
   ],
   imports: [
     BrowserModule,

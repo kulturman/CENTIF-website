@@ -14,7 +14,7 @@ export class HeaderComponent {
     },
     {
       text: 'Actualité',
-      link: "/",
+      link: "/actualite",
     },
     {
       text: 'Présentation',

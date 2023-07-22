@@ -1,0 +1,67 @@
+<app-backdrop [isVisible]="isLoading"></app-backdrop>
+
+<app-sub-header title="Actualité">
+  <li>Actualité</li>
+</app-sub-header>
+
+<div class="main-content p80" *ngIf="pageData">
+  <div class="news-wrapper news-grid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6" *ngFor="let article of pageData?.data">
+          <div class="news-box">
+            <div class="new-thumb">
+              <img
+                src="{{environment.baseUrl + article.attributes.coverImage.data.attributes.formats.small.url}}" alt="Image"
+              >
+            </div>
+            <div class="new-txt">
+              <ul class="news-meta">
+                <li>
+                  {{article.attributes.publishedAt | date: 'mediumDate': 'UCT': 'fr-FR'}}
+                </li>
+              </ul>
+              <h6>
+                <a [routerLink]="['/articles', article.id]">
+                  {{article.attributes.title}}
+                </a>
+              </h6>
+              <p [innerHTML]="article.attributes.content | slice:0:100">
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" *ngIf="pageData.meta.pagination.pageCount > 1">
+        <div class="site-pagination">
+          <nav aria-label="Page navigation">
+            <ul class="pagination">
+              <li>
+                <a
+                  [class.page-changer]="currentPage !== 1"
+                  (click)="changePage(currentPage - 1)" aria-label="Previous">
+                  <span aria-hidden="true">«</span>
+                </a>
+              </li>
+              <li
+                [class.active]="pageNumber + 1 == currentPage"
+                *ngFor="let _ of [].constructor(pageData.meta.pagination.pageCount); let pageNumber=index">
+                <a
+                  class="page-changer" (click)="changePage(pageNumber + 1)">
+                  {{pageNumber + 1}}
+                </a>
+              </li>
+              <li>
+                <a
+                  [class.page-changer]="currentPage <= pageData.meta.pagination.pageCount - 1"
+                  (click)="changePage(currentPage + 1)" aria-label="Next">
+                  <span aria-hidden="true">»</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

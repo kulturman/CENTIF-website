@@ -1,3 +1,4 @@
+<app-backdrop [isVisible]="articles == undefined || homeText == undefined"></app-backdrop>
 <app-caroussel></app-caroussel>
 <div class="main-content">
   <section class="Mayor-video-msg">
@@ -47,9 +48,9 @@
               <div class="deprt-icon-box">
                 <img class="usefulLink-img" [src]="link.img" alt="logo">
                 <h6>
-                  <a href="{{link.link}}">{{link.text}}</a>
+                  <a target="_blank" href="{{link.link}}">{{link.text}}</a>
                 </h6>
-                <a class="rm" href="{{link.link}}">Aller sur le site</a>
+                <a target="_blank" class="rm" href="{{link.link}}">Aller sur le site</a>
               </div>
             </div>
           </div>

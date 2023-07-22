@@ -1,13 +1,9 @@
-<section class="wf100 subheader">
-  <div class="container">
-    <h2>{{article?.data?.attributes?.title}}</h2>
-    <ul>
-      <li> <a routerLink="/">Accueil</a> </li>
-      <li> <a routerLink="articles">Actualité</a> </li>
-      <li>{{article?.data?.attributes?.title}}</li>
-    </ul>
-  </div>
-</section>
+<app-backdrop [isVisible]="article == undefined || articles == undefined"></app-backdrop>
+
+<app-sub-header [title]="article?.data?.attributes?.title">
+  <li><a routerLink="/actualite">Actualité</a> </li>
+  <li>{{article?.data?.attributes?.title}}</li>
+</app-sub-header>
 <div class="main-content p80">
   <div class="news-details">
     <div class="container">
