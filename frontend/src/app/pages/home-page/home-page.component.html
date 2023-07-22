@@ -15,7 +15,7 @@
           <div class="news-box">
             <div class="new-thumb">
               <img
-                src="http://localhost:1337{{article.attributes.coverImage.data.attributes.formats.small.url}}"
+                src="{{environment.baseUrl + article.attributes.coverImage.data.attributes.formats.small.url}}"
               alt="Illustration">
             </div>
             <div class="new-txt">
@@ -23,12 +23,11 @@
                 <li>{{article.attributes.publishedAt | date: 'dd/MM/yyyy'}}</li>
               </ul>
               <h6>
-                <a routerLink="/articles/{{article.attributes.id}}">
+                <a routerLink="/articles/{{article.id}}">
                   {{article.attributes.title}}
                 </a>
               </h6>
-              <p>
-                {{article.attributes.content | slice:0:100}}
+              <p [innerHTML]="article.attributes.content | slice:0:100">
               </p>
             </div>
           </div>

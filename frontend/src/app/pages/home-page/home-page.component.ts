@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Articles, HomePageService, HomeText} from "./home-page.service";
 import {forkJoin} from "rxjs";
 import {formatDate} from "@angular/common";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-home-page',
@@ -54,9 +55,9 @@ export class HomePageComponent implements OnInit {
     ]).subscribe(([homeData, articles]) => {
       this.homeText = homeData;
       this.articles = articles;
-      console.log(articles)
     })
   }
 
   protected readonly formatDate = formatDate;
+  protected readonly environment = environment;
 }

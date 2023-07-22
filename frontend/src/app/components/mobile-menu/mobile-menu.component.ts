@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {MenuItem} from "../components/main-menu/main-menu.component";
+import {MenuItem} from "../main-menu/main-menu.component";
 
 @Component({
   selector: 'app-mobile-menu',

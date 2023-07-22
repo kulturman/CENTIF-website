@@ -401,9 +401,6 @@ li.header-weather {
 }
 /*******************************/
 
-.subheader {
-	padding: 50px 0;
-}
 .depart-info .deprt-icon-box {
 	padding: 20px;
 }
@@ -723,9 +720,7 @@ li.header-weather {
 .site-pagination, .community-links-style-two {
 	margin: 0 0 30px;
 }
-.subheader {
-	padding: 50px 0;
-}
+
 .subheader h2 {
 	font-size: 28px;
 }

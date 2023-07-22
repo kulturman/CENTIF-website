@@ -28,8 +28,8 @@ export interface HomeText {
 
 export interface Articles {
   data: {
+    id: number;
     attributes: {
-      id: number;
       title: string,
       content: string,
       publishedAt: string,

@@ -29,3 +29,22 @@
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  header {
+    display: flex !important;
+    align-items: center;
+  }
+
+  .header-to-logo-text__text {
+    display: none;
+  }
+
+  .h3-navbar {
+    border: none;
+  }
+
+  .subheader {
+    padding: 10px 0 !important;
+  }
+}

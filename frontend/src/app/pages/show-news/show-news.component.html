@@ -1,0 +1,49 @@
+<section class="wf100 subheader">
+  <div class="container">
+    <h2>{{article?.data?.attributes?.title}}</h2>
+    <ul>
+      <li> <a routerLink="/">Accueil</a> </li>
+      <li> <a routerLink="articles">Actualité</a> </li>
+      <li>{{article?.data?.attributes?.title}}</li>
+    </ul>
+  </div>
+</section>
+<div class="main-content p80">
+  <div class="news-details">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="news-box">
+            <div class="new-thumb">
+              <a href="#">
+                <i class="fas fa-link"></i>
+              </a>
+              <img src="{{environment.baseUrl + article?.data?.attributes?.coverImage?.data?.attributes?.formats?.medium?.url}}" alt="">
+            </div>
+            <div class="new-txt">
+              <ul class="news-meta">
+                <li>{{article?.data?.attributes?.publishedAt | date: 'dd/MM/yyyy'}}</li>
+              </ul>
+              <div class="news-content" [innerHTML]="article?.data?.attributes?.content"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="sidebar">
+            <div class="widget">
+              <h4>Derniers articles</h4>
+              <div class="recent-posts inner">
+                <ul>
+                  <li>
+                    <img src="images/rp1.jpg" alt=""> <strong>28 August, 2019</strong>
+                    <h6> <a href="#">Fake News may be worrisome, but the </a> </h6>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

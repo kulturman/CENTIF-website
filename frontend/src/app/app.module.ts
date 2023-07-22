@@ -7,9 +7,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
+import { MobileMenuComponent } from './components/mobile-menu/mobile-menu.component';
 import { CarousselComponent } from './components/caroussel/caroussel.component';
 import {HttpClientModule} from "@angular/common/http";
+import { ShowNewsComponent } from './pages/show-news/show-news.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {HttpClientModule} from "@angular/common/http";
     FooterComponent,
     MobileMenuComponent,
     CarousselComponent,
+    ShowNewsComponent,
   ],
   imports: [
     BrowserModule,

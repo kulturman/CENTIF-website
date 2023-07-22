@@ -308,9 +308,9 @@ header {
 /***************  Sub Header Start  *****************/
 
 .subheader {
-	background: url(../images/subheaderbg.jpg) no-repeat;
+	background: green;
 	background-size: cover;
-	padding: 110px 0;
+	padding: 10px 0;
 }
 .subheader h2 {
 	color: #fff;
