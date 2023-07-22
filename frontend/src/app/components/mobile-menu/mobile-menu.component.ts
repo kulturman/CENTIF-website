@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {MenuItem} from "../main-menu/main-menu.component";
 
 @Component({
@@ -11,8 +11,17 @@ export class MobileMenuComponent {
   selectedMenu: number | null = null;
   @Input() show: boolean = false;
 
+  @Output() onMenuItemLinkClick = new EventEmitter();
+
   selectMenu(index: number | null) {
     this.selectedMenu = index;
   }
 
+  protected readonly alert = alert;
+
+  menuItemClicked(index: number) {
+    if (!this.menu[index].children) {
+      this.onMenuItemLinkClick.emit();
+    }
+  }
 }

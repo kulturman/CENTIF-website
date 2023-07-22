@@ -22,7 +22,6 @@ export class ShowNewsComponent implements OnInit {
     this.showArticleService.getSingleArticle(newsId).subscribe({
       next: article => {
         this.article = article;
-        console.log(article.data);
       }
     });
 

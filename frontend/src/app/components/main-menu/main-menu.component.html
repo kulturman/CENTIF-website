@@ -35,4 +35,4 @@
   </div>
 </nav>
 
-<app-mobile-menu [show]="showMobileMenu" [menu]="menu"></app-mobile-menu>
+<app-mobile-menu (onMenuItemLinkClick)="showMobileMenu=false" [show]="showMobileMenu" [menu]="menu"></app-mobile-menu>
