@@ -1,14 +1,23 @@
-<div class="caroussel">
-  <div class="caroussel__items">
-    <div class="caroussel__item">
-      <div class="caroussel__item__image">
-        <img src="assets/images/slide1.jpg" alt="">
-      </div>
-    </div>
-    <div class="caroussel__item">
-      <div class="caroussel__item__image">
-        <img src="assets/images/slide1.jpg" alt="">
-      </div>
+<div
+  [style.height.px]="height"
+  class="caroussel__items"
+  #carousselItems
+>
+  <button (click)="changeDirection(currentPosition - 1)" class="slide-arrow" id="slide-arrow-prev">
+    &#8249;
+  </button>
+  <button (click)="changeDirection(currentPosition + 1)" class="slide-arrow" id="slide-arrow-next">
+    &#8250;
+  </button>
+
+  <div
+    [ngStyle]="{'transform': 'translateX(' + 100 * (index - currentPosition) + '%)'}"
+
+    [style.transform]="'translateX(100)'"
+    class="caroussel__item"
+    #carousselItem *ngFor="let item of items; let index=index">
+    <div class="caroussel__item__image">
+      <img src="{{items[items.length - index -1].image}}" alt="">
     </div>
   </div>
 </div>
