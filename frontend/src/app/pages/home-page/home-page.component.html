@@ -1,6 +1,6 @@
-<app-backdrop [isVisible]="articles == undefined || homeText == undefined"></app-backdrop>
+<app-backdrop [isVisible]="articles == undefined || homeText == undefined || slider == undefined"></app-backdrop>
 <div class="main-content">
-  <app-caroussel></app-caroussel>
+  <app-caroussel [slider]="slider"></app-caroussel>
   <section class="Mayor-video-msg">
     <p class="mayor-welcome-text">
       {{homeText?.data?.attributes?.homeText}}

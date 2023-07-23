@@ -12,12 +12,10 @@
 
   <div
     [ngStyle]="{'transform': 'translateX(' + 100 * (index - currentPosition) + '%)'}"
-
-    [style.transform]="'translateX(100)'"
     class="caroussel__item"
-    #carousselItem *ngFor="let item of items; let index=index">
+    *ngFor="let item of slider?.data?.attributes?.images?.data; let index=index">
     <div class="caroussel__item__image">
-      <img src="{{items[items.length - index -1].image}}" alt="">
+      <img src="{{environment.baseUrl + slider.data.attributes.images.data[slider.data.attributes.images.data.length - index -1].attributes.url}}" alt="">
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Articles, HomePageService, HomeText} from "./home-page.service";
+import {Articles, HomePageService, HomeText, Slider} from "./home-page.service";
 import {forkJoin} from "rxjs";
 import {formatDate} from "@angular/common";
 import {environment} from "../../../environments/environment";
@@ -43,7 +43,7 @@ export class HomePageComponent implements OnInit {
     },
   ]
   articles!: Articles;
-
+  slider!: Slider;
   homeText!: HomeText;
   constructor(private homeService: HomePageService) {
   }
@@ -52,12 +52,12 @@ export class HomePageComponent implements OnInit {
     forkJoin([
       this.homeService.getHomeData(),
       this.homeService.getLastArticles(),
-    ]).subscribe(([homeData, articles]) => {
+      this.homeService.getSliderImages()
+    ]).subscribe(([homeData, articles, slider]) => {
       this.homeText = homeData;
       this.articles = articles;
+      this.slider = slider;
     })
   }
-
-  protected readonly formatDate = formatDate;
   protected readonly environment = environment;
 }

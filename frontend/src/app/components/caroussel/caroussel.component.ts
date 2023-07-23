@@ -1,4 +1,6 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, ViewChild} from '@angular/core';
+import {Slider} from "../../pages/home-page/home-page.service";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-caroussel',
@@ -10,29 +12,20 @@ export class CarousselComponent implements AfterViewInit {
   @ViewChild('carousselItem', {static: false}) carousselItem!: ElementRef;
   height: number = 695;
   currentPosition: number = 0;
+  @Input() slider!: Slider;
 
-  items = [
-    {
-      image: 'assets/images/slide1.jpg'
-    },
-    {
-      image: 'assets/images/slide2.jpg'
-    }
-  ]
-
-  private getRealHeight() {
-    const element: HTMLElement = this.carousselItem.nativeElement;
-    return element.offsetHeight;
+  private setRealHeight() {
+    this.height = this.height = Math.floor((window.innerWidth - 15) / 2.74);
   }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.height = this.getRealHeight();
-    }, 100);
+    this.setRealHeight();
   }
 
   changeDirection(newPosition: number) {
-    if (newPosition < 0 || newPosition > this.items.length - 1) return;
+    if (newPosition < 0 || newPosition > this.slider.data.attributes.images.data.length - 1) return;
     this.currentPosition = newPosition;
   }
+
+  protected readonly environment = environment;
 }

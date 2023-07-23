@@ -15,6 +15,26 @@ export class HomePageService {
   getLastArticles() {
     return this.httpClient.get<Articles>('api/articles?pagination[limit]=4&sort[0]=createdAt:desc&populate=coverImage')
   }
+
+  getSliderImages() {
+    return this.httpClient.get<Slider>('api/slider?populate=*')
+  }
+}
+
+export interface Slider {
+  data: {
+    attributes: {
+      images: {
+        data: [
+          {
+            attributes: {
+              url: string
+            }
+          }
+        ]
+      }
+    }
+  }
 }
 
 export interface HomeText {
