@@ -1,0 +1,21 @@
+.news-content {
+  text-align: justify;
+}
+
+.news-box {
+  box-shadow: none !important;
+}
+
+.other__images {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.other__image {
+  max-height: 400px;
+}
+
+.other__image img {
+  width: 100%;
+}

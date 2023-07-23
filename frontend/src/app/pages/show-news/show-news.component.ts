@@ -12,6 +12,7 @@ import {Articles} from "../home-page/home-page.service";
 export class ShowNewsComponent implements OnInit {
   article!: Article;
   articles!: Articles;
+  isLoading: boolean = false;
 
   constructor(
     private router: Router,
@@ -29,13 +30,17 @@ export class ShowNewsComponent implements OnInit {
 
   private fetchData() {
     const newsId = this.activatedRoute.snapshot.params['id'];
+    this.isLoading = true;
+
     this.showArticleService.getSingleArticle(newsId).subscribe({
       next: article => {
         this.article = article[0];
         this.articles = article[1];
-      }
+      },
+      complete: () => this.isLoading = false
     });
   }
 
   protected readonly environment = environment;
+  protected readonly console = console;
 }

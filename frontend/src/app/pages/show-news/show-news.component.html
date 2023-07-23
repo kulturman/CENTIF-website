@@ -1,4 +1,4 @@
-<app-backdrop [isVisible]="article == undefined || articles == undefined"></app-backdrop>
+<app-backdrop [isVisible]="isLoading"></app-backdrop>
 
 <app-sub-header [title]="article?.data?.attributes?.title">
   <li><a routerLink="/actualite">Actualité</a> </li>
@@ -20,7 +20,14 @@
               <ul class="news-meta">
                 <li>{{article?.data?.attributes?.publishedAt | date: 'mediumDate': 'UCT': 'fr-FR'}}</li>
               </ul>
+              <h4>{{article?.data?.attributes?.title}}</h4>
               <div class="news-content" [innerHTML]="article?.data?.attributes?.content"></div>
+              <div class="other__images">
+                <div class="other__image" *ngFor="let image of article?.data?.attributes?.images?.data">
+                  <img src="{{environment.baseUrl + image?.attributes?.formats?.large?.url}}" alt="An image here">
+                  {{console.log(image)}}
+                </div>
+              </div>
             </div>
           </div>
         </div>

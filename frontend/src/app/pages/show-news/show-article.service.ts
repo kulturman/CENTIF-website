@@ -64,7 +64,8 @@ export interface Article {
                 }
               }
           }
-        }
+        }[
+        ]
       }
     }
   }
