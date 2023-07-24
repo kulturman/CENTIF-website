@@ -25,7 +25,6 @@
               <div class="other__images">
                 <div class="other__image" *ngFor="let image of article?.data?.attributes?.images?.data">
                   <img src="{{environment.baseUrl + image?.attributes?.formats?.large?.url}}" alt="An image here">
-                  {{console.log(image)}}
                 </div>
               </div>
             </div>

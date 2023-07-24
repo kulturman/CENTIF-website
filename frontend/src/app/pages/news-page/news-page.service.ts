@@ -12,7 +12,7 @@ export class NewsPageService {
 
   getData(pageNumber: number) {
     return this.httpClient.get<NewsPageData>(
-      `/api/articles?sort[0]=createdAt:desc&populate=coverImage&pagination[pageSize]=10&pagination[page]=${pageNumber}`
+      `/api/articles?sort[0]=createdAt:desc&populate=coverImage&pagination[pageSize]=8&pagination[page]=${pageNumber}`
     )
   }
 }
