@@ -14,7 +14,10 @@
           <span class="caret" *ngIf="menuItem.children"></span>
           <ul class="dropdown-menu" [ngClass]="{'active': selectedMenu === index}">
             <li *ngFor="let children of menuItem.children">
-              <a routerLink="{{children.link}}" (click)="onMenuItemLinkClick.emit()">
+              <a
+                routerLink="{{children.link}}"
+                (click)="navigate(children.link)"
+              >
                 {{children.text}}
               </a>
             </li>

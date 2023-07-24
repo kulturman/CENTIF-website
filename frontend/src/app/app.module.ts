@@ -17,6 +17,7 @@ import {SubHeaderComponent} from "./components/sub-header/sub-header.component";
 import { NewsPageComponent } from './pages/news-page/news-page.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { BackdropComponent } from './components/backdrop/backdrop.component';
+import {DocumentsPageComponent} from "./pages/documents-page/documents-page.component";
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -29,6 +30,7 @@ registerLocaleData(localeFr, 'fr');
     MobileMenuComponent,
     CarousselComponent,
     ShowNewsComponent,
+    DocumentsPageComponent,
     SubHeaderComponent,
     SubHeaderComponent,
     NewsPageComponent,

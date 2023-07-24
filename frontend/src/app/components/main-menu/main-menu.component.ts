@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-main-menu',
@@ -9,6 +10,10 @@ export class MainMenuComponent {
   @Input() menu!: MenuItem[];
   selectedMenu: number | null = null;
   showMobileMenu: boolean = false;
+  nextLink!: string;
+
+  constructor(private readonly router: Router) {
+  }
 
   selectMenu(index: number | null) {
     this.selectedMenu = index;
@@ -16,6 +21,16 @@ export class MainMenuComponent {
 
   toggleMobileMenu() {
     this.showMobileMenu = !this.showMobileMenu;
+  }
+
+  navigate(link: string) {
+    this.nextLink = link;
+  }
+
+  parentLinkClicked(index: number) {
+    if (!this.menu[index].link) {
+      this.router.navigate([this.nextLink]);
+    }
   }
 }
 

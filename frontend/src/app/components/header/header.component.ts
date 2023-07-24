@@ -25,11 +25,11 @@ export class HeaderComponent {
           link: ''
         },
         {
-          text: 'CCGA',
+          text: 'Comité National de Coordination',
           link: ''
         },
         {
-          text: 'CNCA',
+          text: 'Gel administratif',
           link: ''
         }
       ]
@@ -44,15 +44,11 @@ export class HeaderComponent {
         },
         {
           link: '',
-          text: "Obligations"
+          text: "Textes régionaux"
         },
         {
           link: '',
-          text: "Formulaire de déclarations"
-        },
-        {
-          link: '',
-          text: "Description de la déclaration"
+          text: "Textes nationaux"
         }
       ]
     },
@@ -66,24 +62,24 @@ export class HeaderComponent {
         },
         {
           link: '',
-          text: "Textes nationaux"
+          text: "Obligations"
         },
         {
           link: '',
-          text: "Textes régionaux"
+          text: "Formulaire de déclarations"
         }
       ]
     },
     {
       text: 'Publications',
-      link: "/",
+      link: "",
       children: [
         {
-          link: '',
+          link: '/rapports',
           text: "Rapports d'activité"
         },
         {
-          link: '',
+          link: '/etudes',
           text: "Etudes"
         }
       ]

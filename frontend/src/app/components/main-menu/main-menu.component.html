@@ -16,15 +16,15 @@
       <li
         (mouseleave)="selectMenu(null)"
         (mouseenter)="selectMenu(index)" class="dropdown" *ngFor="let menuItem of menu; let index = index">
-        <a routerLink="{{menuItem.link}}"
-           class="dropdown-toggle"
-           data-toggle="dropdown"
-           role="button" aria-haspopup="true" aria-expanded="false">
+        <a
+          (click)="parentLinkClicked(index)"
+          routerLink="{{menuItem.link}}"
+           class="dropdown-toggle"                      >
            {{menuItem.text}}
             <span class="caret" *ngIf="menuItem.children"></span>
             <ul class="dropdown-menu" [ngClass]="{'active': selectedMenu === index}">
               <li *ngFor="let children of menuItem.children">
-                <a routerLink="{{children.link}}">
+                <a (click)="navigate(children.link)">
                   {{children.text}}
                 </a>
               </li>
