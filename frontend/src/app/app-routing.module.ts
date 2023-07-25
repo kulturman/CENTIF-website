@@ -19,6 +19,18 @@ const routes: Routes = [
     component: DocumentsPageComponent
   },
   {
+    path: 'textes-nationaux',
+    component: DocumentsPageComponent
+  },
+  {
+    path: 'textes-internationaux',
+    component: DocumentsPageComponent
+  },
+  {
+    path: 'textes-regionaux',
+    component: DocumentsPageComponent
+  },
+  {
     path: 'rapports',
     component: DocumentsPageComponent
   },

@@ -36,18 +36,18 @@ export class HeaderComponent {
     },
     {
       text: 'Textes LBC/FT',
-      link: "/",
+      link: "",
       children: [
         {
-          link: '',
+          link: 'textes-internationaux',
           text: "Textes internationaux"
         },
         {
-          link: '',
+          link: 'textes-regionaux',
           text: "Textes régionaux"
         },
         {
-          link: '',
+          link: 'textes-nationaux',
           text: "Textes nationaux"
         }
       ]

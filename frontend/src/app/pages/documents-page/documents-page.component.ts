@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import {NewsPageData, NewsPageService} from "../news-page/news-page.service";
 import {environment} from "../../../environments/environment";
-import {Document, DocumentItem, DocumentsPageService, DocumentType} from "./documents-page.service";
+import {DocumentItem, DocumentsPageService, DocumentType} from "./documents-page.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -10,11 +9,34 @@ import {Router} from "@angular/router";
   styleUrls: ['./documents-page.component.scss']
 })
 export class DocumentsPageComponent {
-  currentPage: number = 1;
   isLoading: boolean = false;
-  pageTitle: string = 'Etudes';
-  documentType: DocumentType = 'etudes';
+  pageData!: {
+    title: string,
+    documentType: string
+  };
   documents!: DocumentItem[];
+  ulrToDataMap = {
+    '/etudes' : {
+      title: 'Etudes',
+      documentType: 'etudes'
+    },
+    '/rapports' : {
+      title: "Rapports d'activités",
+      documentType: 'rapports'
+    },
+    '/textes-nationaux' : {
+      title: "Textes nationaux",
+      documentType: 'nationaux'
+    },
+    '/textes-regionaux' : {
+      title: "Textes régionaux",
+      documentType: 'regionaux'
+    },
+    '/textes-internationaux' : {
+      title: "Textes internationaux",
+      documentType: 'internationaux'
+    },
+  }
 
   constructor(
     private readonly router: Router,
@@ -23,14 +45,13 @@ export class DocumentsPageComponent {
   }
 
   ngOnInit(): void {
-    const route: string = this.router.url;
+    this.setPageData();
+    this.fetchData(this.pageData.documentType);
+  }
 
-    if (route.includes('/rapports')) {
-      this.pageTitle = "Rapports d'activités";
-      this.documentType = 'rapports';
-    }
-
-    this.fetchData(this.documentType);
+  private setPageData() {
+    const route = this.router.url as keyof typeof this.ulrToDataMap;
+    this.pageData = this.ulrToDataMap[route];
   }
 
   private fetchData(documentType: string) {
@@ -38,12 +59,8 @@ export class DocumentsPageComponent {
 
     this.documentsService.getData(documentType).subscribe({
       next: data => {
-        if (documentType == 'rapports') {
-          this.documents = data.data.attributes.rapports.data;
-        }
-        else {
-          this.documents = data.data.attributes.etudes.data;
-        }
+        // @ts-ignore
+        this.documents = data.data.attributes[documentType].data;
         this.isLoading = false;
       }
     })
