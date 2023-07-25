@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "gel_administratifs",
+  "info": {
+    "singularName": "gel-administratif",
+    "pluralName": "gel-administratifs",
+    "displayName": "Gel administratif"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

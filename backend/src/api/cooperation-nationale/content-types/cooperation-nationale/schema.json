@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "cooperation_nationales",
+  "info": {
+    "singularName": "cooperation-nationale",
+    "pluralName": "cooperation-nationales",
+    "displayName": "Coopération nationale"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

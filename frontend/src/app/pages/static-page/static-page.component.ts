@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import * as path from "path";
+import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -18,17 +17,53 @@ export class StaticPageComponent implements OnInit {
     '/static/presentation-centif' : {
       title: 'CENTIF',
       strapiSingularEntityName: 'presentation-centif'
-    }
+    },
+    '/static/comite-national-coordination' : {
+      title: 'Comité national de coordination',
+      strapiSingularEntityName: 'comite-national-coordination'
+    },
+    '/static/gel-administratif' : {
+      title: 'Gel administratif',
+      strapiSingularEntityName: 'gel-administratif'
+    },
+    '/static/presentation-assujettis' : {
+      title: 'Assujettis',
+      strapiSingularEntityName: 'assujeti'
+    },
+    '/static/obligations' : {
+      title: 'Obligations',
+      strapiSingularEntityName: 'obligation'
+    },
+    '/static/formulaire-de-declaration' : {
+      title: 'Formulaire de déclarations',
+      strapiSingularEntityName: 'formulaire-de-declaration'
+    },
+    '/static/cooperation-nationale' : {
+      title: 'Coopération nationale',
+      strapiSingularEntityName: 'cooperation-nationale'
+    },
+    '/static/cooperation-internationale' : {
+      title: 'Coopération internationale',
+      strapiSingularEntityName: 'cooperation-internationale'
+    },
   };
   isLoading: boolean = false;
 
   constructor(
     private readonly router: Router,
-    private readonly httpClient: HttpClient
+    private readonly httpClient: HttpClient,
+    private readonly activatedRoute: ActivatedRoute
   ) {
+    this.activatedRoute.url.subscribe({
+      next: () => {
+        if (this.pageData) {
+          this.loadData();
+        }
+      }
+    })
   }
+
   ngOnInit() {
-    this.setPageData();
     this.loadData();
   }
 
@@ -39,6 +74,7 @@ export class StaticPageComponent implements OnInit {
   }
 
   private loadData() {
+    this.setPageData();
     this.isLoading = true;
 
     this.httpClient.get<{

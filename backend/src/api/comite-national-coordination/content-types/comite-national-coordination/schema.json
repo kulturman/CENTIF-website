@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "comite_national_coordinations",
+  "info": {
+    "singularName": "comite-national-coordination",
+    "pluralName": "comite-national-coordinations",
+    "displayName": "Comité national de coordination"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

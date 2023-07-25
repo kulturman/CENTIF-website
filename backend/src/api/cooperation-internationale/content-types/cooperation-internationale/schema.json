@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "cooperation_internationales",
+  "info": {
+    "singularName": "cooperation-internationale",
+    "pluralName": "cooperation-internationales",
+    "displayName": "Coopération internationale"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "assujetis",
+  "info": {
+    "singularName": "assujeti",
+    "pluralName": "assujetis",
+    "displayName": "Assujettis",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

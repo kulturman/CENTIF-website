@@ -26,11 +26,11 @@ export class HeaderComponent {
         },
         {
           text: 'Comité National de Coordination',
-          link: ''
+          link: '/static/comite-national-coordination'
         },
         {
           text: 'Gel administratif',
-          link: ''
+          link: '/static/gel-administratif'
         }
       ]
     },
@@ -53,19 +53,19 @@ export class HeaderComponent {
       ]
     },
     {
-      text: 'Assujetis',
-      link: "/",
+      text: 'Assujettis',
+      link: "",
       children: [
         {
-          link: '',
+          link: 'static/presentation-assujettis',
           text: "Présentation"
         },
         {
-          link: '',
+          link: 'static/obligations',
           text: "Obligations"
         },
         {
-          link: '',
+          link: 'static/formulaire-de-declaration',
           text: "Formulaire de déclarations"
         }
       ]
@@ -100,14 +100,14 @@ export class HeaderComponent {
     },
     {
       text: 'Coopérations',
-      link: "/",
+      link: "",
       children: [
         {
-          link: '',
+          link: 'static/cooperation-nationale',
           text: "Nationale"
         },
         {
-          link: '',
+          link: 'static/cooperation-internationale',
           text: "Internationale"
         }
       ]

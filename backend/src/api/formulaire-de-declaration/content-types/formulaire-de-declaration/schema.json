@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "formulaire_de_declarations",
+  "info": {
+    "singularName": "formulaire-de-declaration",
+    "pluralName": "formulaire-de-declarations",
+    "displayName": "Formulaire de déclarations"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "obligations",
+  "info": {
+    "singularName": "obligation",
+    "pluralName": "obligations",
+    "displayName": "Obligations"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}
