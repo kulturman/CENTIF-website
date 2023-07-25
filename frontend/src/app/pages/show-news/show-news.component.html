@@ -21,7 +21,7 @@
                 <li>{{article?.data?.attributes?.publishedAt | date: 'mediumDate': 'UCT': 'fr-FR'}}</li>
               </ul>
               <h4>{{article?.data?.attributes?.title}}</h4>
-              <div class="news-content" [innerHTML]="article?.data?.attributes?.content"></div>
+              <div class="news-content" [innerHTML]="article?.data?.attributes?.content | safeHtml"></div>
               <div class="other__images">
                 <div class="other__image" *ngFor="let image of article?.data?.attributes?.images?.data">
                   <img src="{{environment.baseUrl + image?.attributes?.formats?.large?.url}}" alt="An image here">

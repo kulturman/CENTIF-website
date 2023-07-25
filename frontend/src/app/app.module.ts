@@ -18,6 +18,7 @@ import { NewsPageComponent } from './pages/news-page/news-page.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { BackdropComponent } from './components/backdrop/backdrop.component';
 import {DocumentsPageComponent} from "./pages/documents-page/documents-page.component";
+import {SafePipe} from "./pipes/safe-html";
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -36,6 +37,7 @@ registerLocaleData(localeFr, 'fr');
     NewsPageComponent,
     SpinnerComponent,
     BackdropComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
