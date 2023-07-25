@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "presentation_centifs",
+  "info": {
+    "singularName": "presentation-centif",
+    "pluralName": "presentation-centifs",
+    "displayName": "Présentation CENTIF"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<app-backdrop [isVisible]="isLoading"></app-backdrop>
+
+<app-sub-header title="{{this.pageData?.title}}">
+  <li>{{this.pageData?.title}}</li>
+</app-sub-header>
+
+<div class="main-content p80" *ngIf="pageData">
+  <div class="news-wrapper news-grid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 content" [innerHTML]="html | safeHtml"></div>
+      </div>
+    </div>
+  </div>
+</div>

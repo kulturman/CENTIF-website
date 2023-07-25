@@ -18,11 +18,11 @@ export class HeaderComponent {
     },
     {
       text: 'Présentation',
-      link: "/",
+      link: "",
       children: [
         {
           text: 'CENTIF',
-          link: ''
+          link: '/static/presentation-centif'
         },
         {
           text: 'Comité National de Coordination',
