@@ -46,6 +46,10 @@ export class StaticPageComponent implements OnInit {
       title: 'Coopération internationale',
       strapiSingularEntityName: 'cooperation-internationale'
     },
+    '/static/listes-nationales' : {
+      title: 'Listes nationales',
+      strapiSingularEntityName: 'listes-nationale'
+    },
   };
   isLoading: boolean = false;
 

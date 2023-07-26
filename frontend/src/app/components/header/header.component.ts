@@ -85,11 +85,11 @@ export class HeaderComponent {
       ]
     },
     {
-      text: 'SFC',
-      link: "/",
+      text: 'Sanctions Financières Ciblées',
+      link: "",
       children: [
         {
-          link: '',
+          link: 'static/listes-nationales',
           text: "Listes nationales"
         },
         {

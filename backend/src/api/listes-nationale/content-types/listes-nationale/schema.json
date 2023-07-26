@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "listes_nationales",
+  "info": {
+    "singularName": "listes-nationale",
+    "pluralName": "listes-nationales",
+    "displayName": "Listes nationales"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}
