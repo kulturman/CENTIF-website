@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "liste_des_nations_unies",
+  "info": {
+    "singularName": "liste-des-nations-unie",
+    "pluralName": "liste-des-nations-unies",
+    "displayName": "Liste des nations unies"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

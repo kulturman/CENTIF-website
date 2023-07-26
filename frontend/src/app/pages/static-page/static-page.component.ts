@@ -50,6 +50,10 @@ export class StaticPageComponent implements OnInit {
       title: 'Listes nationales',
       strapiSingularEntityName: 'listes-nationale'
     },
+    '/static/listes-des-nations-unies' : {
+      title: 'Listes des nations unies',
+      strapiSingularEntityName: 'liste-des-nations-unie'
+    },
   };
   isLoading: boolean = false;
 
