@@ -10,7 +10,13 @@ import {environment} from "../../../environments/environment";
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  usefulLinks = [
+  usefulLinks: {
+    img: string,
+    link: string,
+    text: string,
+    hideSecondLink?: boolean,
+    internalUrl?: boolean
+  }[] = [
     {
       img: 'assets/images/usefulLinks/gafi.jpeg',
       link: 'https://www.fatf-gafi.org/',
@@ -33,8 +39,10 @@ export class HomePageComponent implements OnInit {
     },
     {
       img: 'assets/images/usefulLinks/supervision.jpeg',
-      link: '',
-      text: 'AUTORITE DE SUPERVISION ET DE CONTROLE'
+      link: '/static/autorite-supervision',
+      text: 'AUTORITE DE SUPERVISION ET DE CONTROLE',
+      internalUrl: true,
+      hideSecondLink: true
     },
     {
       img: 'assets/images/usefulLinks/onu.jpeg',

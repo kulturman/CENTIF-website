@@ -54,6 +54,10 @@ export class StaticPageComponent implements OnInit {
       title: 'Listes des nations unies',
       strapiSingularEntityName: 'liste-des-nations-unie'
     },
+    '/static/autorite-supervision' : {
+      title: 'Autorité de supervison',
+      strapiSingularEntityName: 'autorite-de-supervision'
+    },
   };
   isLoading: boolean = false;
 

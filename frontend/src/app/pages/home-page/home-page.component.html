@@ -48,9 +48,20 @@
               <div class="deprt-icon-box">
                 <img class="usefulLink-img" [src]="link.img" alt="logo">
                 <h6>
-                  <a target="_blank" href="{{link.link}}">{{link.text}}</a>
+                  <a
+                    *ngIf="link.internalUrl; else externalLink"
+                    routerLink="{{link.link}}"
+                  >
+                    {{link.text}}
+                  </a>
+
+                  <ng-template #externalLink>
+                    <a target="_blank" href="{{link.link}}">
+                      {{link.text}}
+                    </a>
+                  </ng-template>
                 </h6>
-                <a target="_blank" class="rm" href="{{link.link}}">Aller sur le site</a>
+                <a *ngIf="!link.hideSecondLink" target="_blank" class="rm" href="{{link.link}}">Aller sur le site</a>
               </div>
             </div>
           </div>
