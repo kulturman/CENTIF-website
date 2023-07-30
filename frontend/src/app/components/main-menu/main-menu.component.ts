@@ -10,7 +10,6 @@ export class MainMenuComponent {
   @Input() menu!: MenuItem[];
   selectedMenu: number | null = null;
   showMobileMenu: boolean = false;
-  nextLink!: string;
 
   constructor(private readonly router: Router) {
   }
@@ -21,16 +20,6 @@ export class MainMenuComponent {
 
   toggleMobileMenu() {
     this.showMobileMenu = !this.showMobileMenu;
-  }
-
-  navigate(link: string) {
-    this.nextLink = link;
-  }
-
-  parentLinkClicked(index: number) {
-    if (!this.menu[index].link) {
-      this.router.navigate([this.nextLink]);
-    }
   }
 }
 

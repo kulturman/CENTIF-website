@@ -11,15 +11,9 @@ export class MobileMenuComponent {
   @Input() menu!: MenuItem[];
   selectedMenu: number | null = null;
   @Input() show: boolean = false;
-  nextLink!: string;
   @Output() onMenuItemLinkClick = new EventEmitter();
 
   constructor(private readonly router: Router) {
-  }
-
-  navigate(link: string) {
-    this.nextLink = link;
-    this.onMenuItemLinkClick.emit();
   }
 
   selectMenu(index: number | null) {
@@ -30,9 +24,9 @@ export class MobileMenuComponent {
     if (!this.menu[index].children) {
       this.onMenuItemLinkClick.emit();
     }
+  }
 
-    if (!this.menu[index].link) {
-      this.router.navigate([this.nextLink]);
-    }
+  navigate() {
+    this.onMenuItemLinkClick.emit();
   }
 }
