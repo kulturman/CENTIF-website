@@ -19,6 +19,51 @@ export class HomePageService {
   getSliderImages() {
     return this.httpClient.get<Slider>('api/slider?populate=*')
   }
+
+  getUsefulLinks() {
+    return [
+      {
+        img: 'assets/images/usefulLinks/gafi.jpeg',
+        link: 'https://www.fatf-gafi.org/',
+        text: 'GAFI'
+      },
+      {
+        img: 'assets/images/usefulLinks/giaba.jpeg',
+        link: 'https://giaba.org',
+        text: 'GIABA'
+      },
+      {
+        img: 'assets/images/usefulLinks/onu.jpeg',
+        link: 'https://www.unodc.org/unodc/fr/',
+        text: 'ONUDC'
+      },
+      {
+        img: 'assets/images/logo.jpeg',
+        link: '',
+        text: 'DECLARATION EN LIGNE'
+      },
+      {
+        img: 'assets/images/usefulLinks/supervision.jpeg',
+        link: '/static/autorite-supervision',
+        text: 'AUTORITE DE SUPERVISION ET DE CONTROLE',
+        internalUrl: true,
+        hideSecondLink: true
+      },
+      {
+        img: 'assets/images/usefulLinks/onu.jpeg',
+        link: 'https://www.un.org/securitycouncil/fr/content/un-sc-consolidated-list',
+        text: 'LISTES SFC DES NATIONS UNIES'
+      },
+    ];
+  }
+}
+
+export interface UsefulLink {
+  img: string,
+  link: string,
+  text: string,
+  hideSecondLink?: boolean,
+  internalUrl?: boolean
 }
 
 export interface Slider {
