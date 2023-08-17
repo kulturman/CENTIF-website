@@ -20,6 +20,7 @@ import { BackdropComponent } from './components/backdrop/backdrop.component';
 import {DocumentsPageComponent} from "./pages/documents-page/documents-page.component";
 import {SafePipe} from "./pipes/safe-html";
 import { StaticPageComponent } from './pages/static-page/static-page.component';
+import {NotFoundComponent} from "./pages/not-found/not-found.component";
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -40,6 +41,7 @@ registerLocaleData(localeFr, 'fr');
     BackdropComponent,
     SafePipe,
     StaticPageComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

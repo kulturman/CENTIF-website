@@ -5,6 +5,7 @@ import {ShowNewsComponent} from "./pages/show-news/show-news.component";
 import {NewsPageComponent} from "./pages/news-page/news-page.component";
 import {DocumentsPageComponent} from "./pages/documents-page/documents-page.component";
 import {StaticPageComponent} from "./pages/static-page/static-page.component";
+import {NotFoundComponent} from "./pages/not-found/not-found.component";
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
         component: StaticPageComponent
       }
     ]
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
