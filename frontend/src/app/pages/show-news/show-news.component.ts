@@ -10,7 +10,7 @@ import {Articles} from "../home-page/home-page.service";
   styleUrls: ['./show-news.component.scss']
 })
 export class ShowNewsComponent implements OnInit {
-  article!: Article;
+  article?: Article;
   articles!: Articles;
   isLoading: boolean = false;
 

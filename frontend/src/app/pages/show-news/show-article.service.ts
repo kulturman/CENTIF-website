@@ -29,7 +29,7 @@ export interface Article {
           attributes: {
             formats:
               {
-                small: {
+                small?: {
                   url: string
                 },
                 large: {
@@ -50,16 +50,16 @@ export interface Article {
           attributes: {
             formats:
               {
-                small: {
+                small?: {
                   url: string
                 },
-                large: {
+                large?: {
                   url: string
                 },
-                medium: {
+                medium?: {
                   url: string
                 },
-                thumbnail: {
+                thumbnail?: {
                   url: string
                 }
               }

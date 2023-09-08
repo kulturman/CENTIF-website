@@ -9,10 +9,10 @@ import {environment} from "../../../environments/environment";
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  usefulLinks!: UsefulLink[];
-  articles!: Articles;
+  usefulLinks?: UsefulLink[];
+  articles?: Articles;
   slider!: Slider;
-  homeText!: HomeText;
+  homeText?: HomeText;
   constructor(private homeService: HomePageService) {
   }
 
