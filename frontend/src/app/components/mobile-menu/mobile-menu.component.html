@@ -5,7 +5,7 @@
         (mouseleave)="selectMenu(null)"
         (mouseenter)="selectMenu(index)" class="dropdown" *ngFor="let menuItem of menu; let index = index">
         <a
-           (click)="menuItemClicked(index)"
+           (click)="menuItemClicked(index, $event)"
            routerLink="{{menuItem.link}}"
            class="dropdown-toggle"
            data-toggle="dropdown"

@@ -1,5 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-main-menu',
@@ -10,9 +9,6 @@ export class MainMenuComponent {
   @Input() menu!: MenuItem[];
   selectedMenu: number | null = null;
   showMobileMenu: boolean = false;
-
-  constructor(private readonly router: Router) {
-  }
 
   selectMenu(index: number | null) {
     this.selectedMenu = index;

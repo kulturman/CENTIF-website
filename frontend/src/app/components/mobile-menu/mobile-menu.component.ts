@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {MenuItem} from "../main-menu/main-menu.component";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-mobile-menu',
@@ -13,14 +12,11 @@ export class MobileMenuComponent {
   @Input() show: boolean = false;
   @Output() onMenuItemLinkClick = new EventEmitter();
 
-  constructor(private readonly router: Router) {
-  }
-
   selectMenu(index: number | null) {
     this.selectedMenu = index;
   }
 
-  menuItemClicked(index: number) {
+  menuItemClicked(index: number, event: Event) {
     if (!this.menu[index].children) {
       this.onMenuItemLinkClick.emit();
     }
@@ -29,4 +25,5 @@ export class MobileMenuComponent {
   navigate() {
     this.onMenuItemLinkClick.emit();
   }
+
 }
